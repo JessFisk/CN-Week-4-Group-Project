@@ -15,101 +15,108 @@
     </header>
 
     <body>
-        <div id="animalSelection">
-            <div class="Boxes">
-                <h3>Sheep</h3>
-                <img src="./sheep.jpg" alt="Sheep">
-                <h4 id="sheep"></h4>
-            </div>
-            <div class="Boxes">
-                <h3>Dragon</h3>
-                <img src="./dragon.jpg" alt="Dragon">
-                <h4 id="dragon"></h4>
-            </div>
-            <div class="Boxes">
-                <h3>Dog</h3>
-                <img src="./dog.jpg" alt="Dog">
-                <h4 id="dog"></h4>
-            </div>
-            <div class="Boxes">
-                <h3>John</h3>
-                <img src="./john.jpeg" alt="John">
-                <h4 id="john"></h4>
-            </div>
-        </div>
-        <div id="Instructions">
-            <div id="ruleBox">
-                <h2>Instructions</h2>
-                <h3>1 Rule: Don't kill your GaMaJeTchi</h3>
-            </div>
-        </div>
-        <div id="meterBarsBoxflexDiv">
-            <div id="meterBarsBox">
-                <div id="MeterBars">
-                <div id="meterBoxTitle">
-                    <h3>Don't Run Out</h3>
+        <div id="page1">
+            <div id="animalSelection">
+                <div id= "sheepCard" class="Boxes">
+                    <h3>Sheep</h3>
+                    <img src="./sheep.jpg" alt="Sheep">
+                    <h4 id="sheepLabel"></h4>
                 </div>
-                    <div>
-                        <label for="fuel">Life:</label>
-                        <meter class = "meter" id = "meterLife"
-                        min="0" max="100"
-                        low="33" high="66" optimum="80"
-                        value="35"> at 50/100></meter>
-                    </div>
-                    <div>
-                        <label for="fuel">Hunger:</label>
-                        <meter class = "meter" id = "meterHunger"
-                        min="0" max="100"
-                        low="33" high="66" optimum="80"
-                        value="60"> at 50/100></meter>
-                    </div>
-                    <div>
-                        <label for="fuel">Thirst:</label>
-                        <meter class = "meter" id = "meterThirst"
-                        min="0" max="100"
-                        low="33" high="66" optimum="80"
-                        value="85"> at 50/100></meter>
-                    </div>
-                    <div>
-                        <label for="fuel">Exercise:</label>
-                        <meter class = "meter" id = "meterExercise"
-                        min="0" max="100"
-                        low="33" high="66" optimum="80"
-                        value="50"> at 50/100></meter>
-                    </div>
-                    <div>
-                        <label for="fuel">Sleep:</label>
-                        <meter class = "meter" id = "meterSleep"
-                        min="0" max="100"
-                        low="33" high="66" optimum="80"
-                        value="20"> at 50/100></meter>
+                <div id= "dragonCard" class="Boxes">
+                    <h3>Dragon</h3>
+                    <img src="./dragon.jpg" alt="Dragon">
+                    <h4 id="dragonLabel"></h4>
+                </div>
+                <div id= "dogCard" class="Boxes">
+                    <h3>Dog</h3>
+                    <img src="./dog.jpg" alt="Dog">
+                    <h4 id="dogLabel"></h4>
+                </div>
+                <div id= "johnCard" class="Boxes">
+                    <h3>John</h3>
+                    <img src="./john.jpeg" alt="John">
+                    <h4 id="johnLabel"></h4>
+                </div>
+            </div>
+            <div id="Instructions">
+                <div id="ruleBox">
+                    <h2>Instructions</h2>
+                    <h3>1 Rule: Don't kill your GaMaJeTchi</h3>
+                </div>
+            </div>
+        </div>
+        <div id="page2">
+            <div id="meterBarsBoxflexDiv">
+                <div id="meterBarsBox">
+                    <div id="MeterBars">
+                        <div id="meterBoxTitle">
+                            <h3>Don't Run Out</h3>
+                        </div>
+                        <div>
+                            <label for="fuel">Life:</label>
+                            <meter class="meter" id="meterLife" min="0" max="100" low="33" high="66" optimum="80"
+                                value="35"> at 50/100></meter>
+                        </div>
+                        <div>
+                            <label for="fuel">Hunger:</label>
+                            <meter class="meter" id="meterHunger" min="0" max="100" low="33" high="66" optimum="80"
+                                value="60"> at 50/100></meter>
+                        </div>
+                        <div>
+                            <label for="fuel">Thirst:</label>
+                            <meter class="meter" id="meterThirst" min="0" max="100" low="33" high="66" optimum="80"
+                                value="85"> at 50/100></meter>
+                        </div>
+                        <div>
+                            <label for="fuel">Exercise:</label>
+                            <meter class="meter" id="meterExercise" min="0" max="100" low="33" high="66" optimum="80"
+                                value="50"> at 50/100></meter>
+                        </div>
+                        <div>
+                            <label for="fuel">Sleep:</label>
+                            <meter class="meter" id="meterSleep" min="0" max="100" low="33" high="66" optimum="80"
+                                value="20"> at 50/100></meter>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> 
 
-        <div id="ChosenAnimalFlexBox">
-            <div id="chosenAnimal"></div>
+            <div id="ChosenAnimalFlexBox">
+                <div id="chosenAnimal">
+                    <div id = "sheepImages">
+                        <img class = "hidden" src="./sheep.jpg" alt="Sheep">
+                    </div>
+                    <div id = "dragonImages">
+                        <img class = "hidden" src="./dragon.jpg" alt="Dragon">
+                    </div>
+                    <div id = "dogImages">
+                        <img class = "hidden" src="./dog.jpg" alt="Dog">
+                    </div>
+                    <div id = "johnImages">
+                        <img class = "hidden" src="./john.jpeg" alt="John">
+                    </div>
+                </div>
+            </div>
+
+            <div id="playBtns">
+                <div id="healthBtns">
+                    <div class="btnLabel">Food</div>
+                </div>
+                <div id="healthBtns">
+                    <div class="btnLabel">Dance</div>
+                </div>
+                <div id="healthBtns">
+                    <div class="btnLabel">Drink</div>
+                </div>
+                <div id="healthBtns">
+                    <div class="btnLabel">Sleep</div>
+                </div>
+                <div id="healthBtns">
+                    <div class="btnLabel">Die</div>
+                </div>
+            </div>
         </div>
 
-        <div id="playBtns">
-            <div id="healthBtns">
-                <div class="btnLabel">Food</div>
-            </div>
-            <div id="healthBtns">
-                <div class="btnLabel">Dance</div>
-            </div>
-            <div id="healthBtns">
-                <div class="btnLabel">Drink</div>
-            </div>
-            <div id="healthBtns">
-                <div class="btnLabel">Sleep</div>
-            </div>
-            <div id="healthBtns">
-                <div class="btnLabel">Die</div>
-            </div>
-        </div>
-        
     </body>
 
 

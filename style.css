@@ -22,6 +22,16 @@ h1 {
     margin: 0%
 }
 
+#page1 {
+        display: block;
+}
+
+#page2 {
+    display: none;
+}
+.hidden{
+    display: none;
+}
 #animalSelection {
     display: flex;
     flex-direction: row;
@@ -37,11 +47,14 @@ h1 {
     height: 300px;
     width: 200px;
     margin: 10px;
+    margin-top: 120px;
     border-radius: 10px;
     box-shadow: 0.25px 0.25px 20px 0.25px rgb(48, 31, 42);
 }
 
-.Boxes img{
+.Boxes img, 
+#chosenAnimal img
+{
     max-width: 100%;
 }
 
@@ -136,7 +149,7 @@ h1 {
         height: 400px;
         width: 400px;
         margin: 10px;
-        border-radius: 30px;
+        border-radius: 10px;
         padding: 10px;
         box-shadow: 0.25px 0.25px 20px 0.25px rgb(48, 31, 42);
         display: flex;

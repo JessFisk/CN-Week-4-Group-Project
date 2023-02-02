@@ -37,3 +37,49 @@ johnCard.addEventListener(`click`, () => {
 
 
 
+
+// Mattscode
+
+let dogimages = [
+    `dogHappy.jpg`,
+    `dogNormal.jpg`,
+    `dogsad.jpg`,
+    `dogsadder.jpg`,
+]
+
+
+
+
+
+function myImages() {
+
+    if(life.value >= 80){
+    document.getElementById("dogimages").src = `./images/dogHappy.jpg`
+    console.log(myImages)
+    
+    }
+
+    else if (life.value < 80 && life.value >= 20 ){
+    document.getElementById("dogimages").src = `./images/dogNormal.jpg`
+}
+
+    else if (life.value < 20 && life.value >= 10 ) {
+    document.getElementById("dogimages").src = `./images/dogsad.jpg`
+    
+}
+
+else if (life.value < 10) {
+    document.getElementById("dogimages").src = `./images/dogsadder.jpg`
+}
+
+else if (life.value = 0) {
+    document.getElementById("dogimages").src = `./images/dogsadder.jpg`
+}
+
+
+}
+
+
+myImages();
+
+

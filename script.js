@@ -10,6 +10,8 @@ const dogImages = document.querySelectorAll("#dogImages img")
 const johnImages = document.querySelectorAll("#johnImages img")
 const buttonGlow = document.querySelectorAll(".healthBtns")
 
+
+
 sheepCard.addEventListener(`click`, () => {
     page1.style.display = `none`
     page2.style.display = `block`
@@ -114,12 +116,20 @@ console.log (gamePet)
 
 
 const Life = document.getElementById('meterLife');
-
+const Hunger = document.getElementById("meterHunger");
+const Thirst = document.getElementById("meterThirst");
+const Exercise = document.getElementById("meterExercise");
+const Sleep = document.getElementById("meterSleep")
 
 
 //////// So in order to reducd the bar we need to call the bar reducer function (until the bars return 0, havent added this yet) i have created a function to do this every half a second. I have added the Set interval timer mentioned by John and found on MDN. So i am telling set interval timer to run life reducer ever 500 miliseconds. 
 const lifeReducer = () => {
     gamePet.barReducer()
+    Life.value= gamePet.health
+    Hunger.value=gamePet.hunger
+    Thirst.value=gamePet.thirst
+    Exercise.value=gamePet.exercise
+    Sleep.value=gamePet.sleep
     console.log (gamePet)
 }
 setInterval( lifeReducer, 500)

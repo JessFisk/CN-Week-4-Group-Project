@@ -91,6 +91,7 @@ class Pet{
         this.health += 15;
         this.hunger += 15;
         this.thirst -= 15;
+        this.sleep += 25;
     }
     barReducer(){
         this.health -= 1
@@ -101,11 +102,13 @@ class Pet{
     }
 
 }
-// / Now that we have gamePet at an object we can use this to access the numbers/functions above
+// / Now that we have gamePet as an object we can use this to access the numbers/functions above
 
-// const gamePet = new Pet ()
+const gamePet = new Pet ()
 // console.log (gamePet)
+
 // //// For example if we use game.Pet as the object and apply the function dance we can see the stats change in the Console Log 
+
 // gamePet.dance ()
 // console.log (gamePet)
 
@@ -132,10 +135,7 @@ const lifeReducer = () => {
     Sleep.value=gamePet.sleep
     console.log (gamePet)
 }
-setInterval( lifeReducer, 500)
-
-
-
+setInterval( lifeReducer, 750)
 
 
 const FoodButton = document.getElementById("foodButton")
@@ -146,51 +146,66 @@ const DieButton = document.getElementById("dieButton")
 
 
 DanceButton.addEventListener(`click`, (e) => {
-    health.value += gamePet.dance
+    Exercise + gamePet.dance()
+}) 
 
-    console.log(DanceButton)
+FoodButton.addEventListener(`click`, (e) => {
+    Hunger + gamePet.eat()
+}) 
+
+DrinkButton.addEventListener(`click`, (e) => {
+    Thirst + gamePet.drink()
+}) 
+
+sleepButton.addEventListener(`click`, (e) => {
+    Sleep + gamePet.gotoSleep()
 }) 
 
 
 
+//// Need to add Die meter element for this button
+
+DieButton.addEventListener(`click`, (e) => {
+    gamePet.die()
+    Life.value= gamePet.health
+    Hunger.value=gamePet.hunger
+    Thirst.value=gamePet.thirst
+    Exercise.value=gamePet.exercise
+    Sleep.value=gamePet.sleep
+      
+}) 
 
 
 
+let dogimages = [
+    `dogHappy.jpg`,
+    `dogNormal.jpg`,
+    `dogsad.jpg`,
+    `dogsadder.jpg`,
+]
 
+function myImages() {
+    if (life.value >= 80) {
+        document.getElementById("dogimages").src = `./images/dogHappy.jpg`
+        console.log(myImages)
+    }
 
+    else if (life.value < 80 && life.value >= 20) {
+        document.getElementById("dogimages").src = `./images/dogNormal.jpg`
+    }
 
+    else if (life.value < 20 && life.value >= 10) {
+        document.getElementById("dogimages").src = `./images/dogsad.jpg`
+    }
 
-///////Mattscode
+    else if (life.value < 10) {
+        document.getElementById("dogimages").src = `./images/dogsadder.jpg`
+    }
 
-// let dogimages = [
-//     `dogHappy.jpg`,
-//     `dogNormal.jpg`,
-//     `dogsad.jpg`,
-//     `dogsadder.jpg`,
-// ]
-
-// function myImages() {
-//     if (life.value >= 80) {
-//         document.getElementById("dogimages").src = `./images/dogHappy.jpg`
-//         console.log(myImages)
-//     }
-
-//     else if (life.value < 80 && life.value >= 20) {
-//         document.getElementById("dogimages").src = `./images/dogNormal.jpg`
-//     }
-
-//     else if (life.value < 20 && life.value >= 10) {
-//         document.getElementById("dogimages").src = `./images/dogsad.jpg`
-//     }
-
-//     else if (life.value < 10) {
-//         document.getElementById("dogimages").src = `./images/dogsadder.jpg`
-//     }
-
-//     else if (life.value = 0) {
-//         document.getElementById("dogimages").src = `./images/dogsadder.jpg`
-//     }
-// }
-// myImages();
+    else if (life.value = 0) {
+        document.getElementById("dogimages").src = `./images/dogsadder.jpg`
+    }
+}
+myImages();
 
 

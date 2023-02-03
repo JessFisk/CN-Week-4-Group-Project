@@ -48,7 +48,6 @@ buttonGlow.forEach((Glow) => {
 
 
 
-
 class Pet{
     constructor (animal){
         this.health = 100
@@ -91,6 +90,14 @@ class Pet{
         this.hunger += 15;
         this.thirst -= 15;
     }
+    barReducer(){
+        this.health -= 1
+        this.hunger -= 1
+        this.exercise -= 1
+        this.sleep -= 1
+        this.thirst -= 1
+    }
+
 }
 ///// Now that we have gamePet at an object we can use this to access the numbers/functions above
 
@@ -101,12 +108,25 @@ gamePet.dance ()
 console.log (gamePet)
 
 
+//// reducing the Health bars over time 
 
 
 
 
+const Life = document.getElementById('meterLife');
 
-// Mattscode
+
+
+//////// So in order to reducd the bar we need to call the bar reducer function (until the bars return 0, havent added this yet) i have created a function to do this every half a second. I have added the Set interval timer mentioned by John and found on MDN. So i am telling set interval timer to run life reducer ever 500 miliseconds. 
+const lifeReducer = () => {
+    gamePet.barReducer()
+    console.log (gamePet)
+}
+setInterval( lifeReducer, 500)
+
+
+
+///////Mattscode
 
 // let dogimages = [
 //     `dogHappy.jpg`,

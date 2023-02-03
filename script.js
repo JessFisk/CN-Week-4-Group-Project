@@ -81,7 +81,7 @@ class Pet{
     }
 
     dance() {
-        this.health += 5;
+        this.health -= 10;
         this.hunger -= 10;
         this.thirst -= 7;
         this.sleep -= 20
@@ -91,6 +91,7 @@ class Pet{
         this.health += 15;
         this.hunger += 15;
         this.thirst -= 15;
+        this.sleep += 25;
     }
     barReducer(){
         this.health -= 1
@@ -101,11 +102,13 @@ class Pet{
     }
 
 }
-// / Now that we have gamePet at an object we can use this to access the numbers/functions above
+// / Now that we have gamePet as an object we can use this to access the numbers/functions above
 
-// const gamePet = new Pet ()
+const gamePet = new Pet ()
 // console.log (gamePet)
+
 // //// For example if we use game.Pet as the object and apply the function dance we can see the stats change in the Console Log 
+
 // gamePet.dance ()
 // console.log (gamePet)
 
@@ -125,17 +128,15 @@ const Sleep = document.getElementById("meterSleep")
 //////// So in order to reducd the bar we need to call the bar reducer function (until the bars return 0, havent added this yet) i have created a function to do this every half a second. I have added the Set interval timer mentioned by John and found on MDN. So i am telling set interval timer to run life reducer ever 500 miliseconds. 
 const lifeReducer = () => {
     gamePet.barReducer()
-    Life.value= gamePet.health
-    Hunger.value=gamePet.hunger
-    Thirst.value=gamePet.thirst
-    Exercise.value=gamePet.exercise
-    Sleep.value=gamePet.sleep
-    console.log (gamePet)
+    Life.value= gamePet.health;
+    Hunger.value=gamePet.hunger;
+    Thirst.value=gamePet.thirst;
+    Exercise.value=gamePet.exercise;
+    Sleep.value=gamePet.sleep;
+    // console.log (gamePet);
+    myImages();
 }
-setInterval( lifeReducer, 500)
-
-
-
+setInterval( lifeReducer, 750)
 
 
 const FoodButton = document.getElementById("foodButton")
@@ -146,51 +147,61 @@ const DieButton = document.getElementById("dieButton")
 
 
 DanceButton.addEventListener(`click`, (e) => {
-    health.value += gamePet.dance
+    Exercise + gamePet.dance()
+}) 
 
-    console.log(DanceButton)
+FoodButton.addEventListener(`click`, (e) => {
+    Hunger + gamePet.eat()
+}) 
+
+DrinkButton.addEventListener(`click`, (e) => {
+    Thirst + gamePet.drink()
+}) 
+
+sleepButton.addEventListener(`click`, (e) => {
+    Sleep + gamePet.gotoSleep()
 }) 
 
 
 
+//// Need to add Die meter element for this button
 
+DieButton.addEventListener(`click`, (e) => {
+    gamePet.die()
+    Life.value= gamePet.health
+    Hunger.value=gamePet.hunger
+    Thirst.value=gamePet.thirst
+    Exercise.value=gamePet.exercise
+    Sleep.value=gamePet.sleep
+      
+}) 
 
+let dogimages = [
+    `dogHappy.jpg`,
+    `dogNormal.jpg`,
+    `dogsad.jpg`,
+    `dogsadder.jpg`,
+]
 
+function myImages() {
+    if (gamePet.health >= 80) {
+        document.getElementById("rotateImage").src = `dogHappy.jpg`
+    }
 
+    else if (gamePet.health < 80 && gamePet.health >= 60) {
+        document.getElementById("rotateImage").src = `dogNormal.jpg`
+    }
 
+    else if (gamePet.health < 60 && gamePet.health>= 10) {
+        document.getElementById("rotateImage").src = `dogsad.jpg`
+    }
 
+    else if (gamePet.health < 10) {
+        document.getElementById("rotateImage").src = `dogsadder.jpg`
+    }
 
-///////Mattscode
-
-// let dogimages = [
-//     `dogHappy.jpg`,
-//     `dogNormal.jpg`,
-//     `dogsad.jpg`,
-//     `dogsadder.jpg`,
-// ]
-
-// function myImages() {
-//     if (life.value >= 80) {
-//         document.getElementById("dogimages").src = `./images/dogHappy.jpg`
-//         console.log(myImages)
-//     }
-
-//     else if (life.value < 80 && life.value >= 20) {
-//         document.getElementById("dogimages").src = `./images/dogNormal.jpg`
-//     }
-
-//     else if (life.value < 20 && life.value >= 10) {
-//         document.getElementById("dogimages").src = `./images/dogsad.jpg`
-//     }
-
-//     else if (life.value < 10) {
-//         document.getElementById("dogimages").src = `./images/dogsadder.jpg`
-//     }
-
-//     else if (life.value = 0) {
-//         document.getElementById("dogimages").src = `./images/dogsadder.jpg`
-//     }
-// }
-// myImages();
-
+    else if (gamePet.health = 0) {
+        document.getElementById("rotateImage").src = `dogsadder.jpg`
+    }
+}
 

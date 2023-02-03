@@ -101,13 +101,13 @@ class Pet{
     }
 
 }
-///// Now that we have gamePet at an object we can use this to access the numbers/functions above
+// / Now that we have gamePet at an object we can use this to access the numbers/functions above
 
-const gamePet = new Pet ()
-console.log (gamePet)
-//// For example if we use game.Pet as the object and apply the function dance we can see the stats change in the Console Log 
-gamePet.dance ()
-console.log (gamePet)
+// const gamePet = new Pet ()
+// console.log (gamePet)
+// //// For example if we use game.Pet as the object and apply the function dance we can see the stats change in the Console Log 
+// gamePet.dance ()
+// console.log (gamePet)
 
 
 //// reducing the Health bars over time 
@@ -133,6 +133,30 @@ const lifeReducer = () => {
     console.log (gamePet)
 }
 setInterval( lifeReducer, 500)
+
+
+
+
+
+const FoodButton = document.getElementById("foodButton")
+const DanceButton = document.getElementById("danceButton")
+const DrinkButton = document.getElementById("drinkButton")
+const SleepButton = document.getElementById("sleepButton")
+const DieButton = document.getElementById("dieButton")
+
+
+DanceButton.addEventListener(`click`, (e) => {
+    health.value += gamePet.dance
+
+    console.log(DanceButton)
+}) 
+
+
+
+
+
+
+
 
 
 

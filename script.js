@@ -81,7 +81,7 @@ class Pet{
     }
 
     dance() {
-        this.health += 5;
+        this.health -= 10;
         this.hunger -= 10;
         this.thirst -= 7;
         this.sleep -= 20
@@ -128,12 +128,13 @@ const Sleep = document.getElementById("meterSleep")
 //////// So in order to reducd the bar we need to call the bar reducer function (until the bars return 0, havent added this yet) i have created a function to do this every half a second. I have added the Set interval timer mentioned by John and found on MDN. So i am telling set interval timer to run life reducer ever 500 miliseconds. 
 const lifeReducer = () => {
     gamePet.barReducer()
-    Life.value= gamePet.health
-    Hunger.value=gamePet.hunger
-    Thirst.value=gamePet.thirst
-    Exercise.value=gamePet.exercise
-    Sleep.value=gamePet.sleep
-    console.log (gamePet)
+    Life.value= gamePet.health;
+    Hunger.value=gamePet.hunger;
+    Thirst.value=gamePet.thirst;
+    Exercise.value=gamePet.exercise;
+    Sleep.value=gamePet.sleep;
+    // console.log (gamePet);
+    myImages();
 }
 setInterval( lifeReducer, 750)
 
@@ -175,8 +176,6 @@ DieButton.addEventListener(`click`, (e) => {
       
 }) 
 
-
-
 let dogimages = [
     `dogHappy.jpg`,
     `dogNormal.jpg`,
@@ -185,27 +184,24 @@ let dogimages = [
 ]
 
 function myImages() {
-    if (life.value >= 80) {
-        document.getElementById("dogimages").src = `./images/dogHappy.jpg`
-        console.log(myImages)
+    if (gamePet.health >= 80) {
+        document.getElementById("rotateImage").src = `dogHappy.jpg`
     }
 
-    else if (life.value < 80 && life.value >= 20) {
-        document.getElementById("dogimages").src = `./images/dogNormal.jpg`
+    else if (gamePet.health < 80 && gamePet.health >= 60) {
+        document.getElementById("rotateImage").src = `dogNormal.jpg`
     }
 
-    else if (life.value < 20 && life.value >= 10) {
-        document.getElementById("dogimages").src = `./images/dogsad.jpg`
+    else if (gamePet.health < 60 && gamePet.health>= 10) {
+        document.getElementById("rotateImage").src = `dogsad.jpg`
     }
 
-    else if (life.value < 10) {
-        document.getElementById("dogimages").src = `./images/dogsadder.jpg`
+    else if (gamePet.health < 10) {
+        document.getElementById("rotateImage").src = `dogsadder.jpg`
     }
 
-    else if (life.value = 0) {
-        document.getElementById("dogimages").src = `./images/dogsadder.jpg`
+    else if (gamePet.health = 0) {
+        document.getElementById("rotateImage").src = `dogsadder.jpg`
     }
 }
-myImages();
-
 
